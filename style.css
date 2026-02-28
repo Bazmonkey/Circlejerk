@@ -90,6 +90,27 @@ img { max-width: 100%; display: block; }
   fill: white;
 }
 
+/* CSS-only logo icon (used in dynamically injected nav) */
+.cj-logo-icon {
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid white;
+  border-radius: 50%;
+  position: relative;
+}
+.cj-logo-icon::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 5px;
+  border: 2.5px solid white;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+
 .cj-logo-text {
   font-size: 20px;
   font-weight: 700;

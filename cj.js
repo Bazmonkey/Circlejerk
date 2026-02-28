@@ -6,8 +6,19 @@ let CJ_DATA = null;
 
 async function loadData() {
   if (CJ_DATA) return CJ_DATA;
-  const res = await fetch('data/data.json');
-  CJ_DATA = await res.json();
+  try {
+    const res = await fetch('data/data.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    CJ_DATA = await res.json();
+  } catch (e) {
+    console.error('Failed to load data.json:', e);
+    document.body.innerHTML = `<div style="padding:40px;font-family:sans-serif;text-align:center;">
+      <h2>Could not load data</h2>
+      <p style="color:#666;margin-top:8px">Error: ${e.message}</p>
+      <p style="color:#666;margin-top:4px">Make sure you're running this through a server (e.g. Live Server), not opening the file directly.</p>
+    </div>`;
+    throw e;
+  }
   return CJ_DATA;
 }
 
@@ -163,9 +174,7 @@ function renderNav(activePage) {
       <div class="cj-nav-inner">
         <a href="index.html" class="cj-logo">
           <div class="cj-logo-mark">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-            </svg>
+            <div class="cj-logo-icon"></div>
           </div>
           <span class="cj-logo-text">circlejerk</span>
         </a>
