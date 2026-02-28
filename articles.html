@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circlejerk — Articles</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cj-article-list-card {
+      background: white;
+      border: 1px solid var(--cj-border);
+      border-radius: var(--cj-radius);
+      overflow: hidden;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+    }
+    .cj-article-list-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .cj-article-list-body { padding: 16px; }
+    .cj-article-list-author {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .cj-article-list-author-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .cj-article-list-author-title {
+      font-size: 11px;
+      color: var(--cj-text-secondary);
+    }
+    .cj-article-list-headline {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .cj-article-list-excerpt {
+      font-size: 13px;
+      color: var(--cj-text-secondary);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .cj-article-list-meta {
+      font-size: 11px;
+      color: var(--cj-text-light);
+    }
+    .cj-article-list-thumb {
+      background: linear-gradient(135deg, #e8f0fb 0%, #dce6f1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    @media (max-width: 480px) {
+      .cj-article-list-card { grid-template-columns: 1fr; }
+      .cj-article-list-thumb { height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="cj-page">
+    <div class="cj-layout-wide" style="display:grid;grid-template-columns:225px 1fr;gap:24px;">
+
+      <aside>
+        <div id="sidebar-profile"></div>
+      </aside>
+
+      <main>
+        <div class="cj-page-header">Articles &amp; Thought Leadership</div>
+        <div id="articles-container">
+          <div style="color:#999;text-align:center;padding:32px;">Loading...</div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="cj.js"></script>
+  <script>
+    (async () => {
+      await loadData();
+      document.getElementById('nav-placeholder').innerHTML = renderNav('articles.html');
+      document.getElementById('sidebar-profile').innerHTML = renderSidebarProfile();
+      document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+      const articles = CJ_DATA.posts.filter(p => p.type === 'article');
+      const container = document.getElementById('articles-container');
+
+      if (articles.length === 0) {
+        container.innerHTML = '<div class="cj-card" style="padding:32px;text-align:center;color:#999;">No articles yet.</div>';
+        return;
+      }
+
+      container.innerHTML = articles.map(a => {
+        const author = getCharacter(a.author);
+        if (!author) return '';
+        return `
+          <div class="cj-article-list-card" onclick="location.href='article.html?id=${a.id}'">
+            <div class="cj-article-list-body">
+              <div class="cj-article-list-author">
+                ${avatarHTML(author, 'sm')}
+                <div>
+                  <div class="cj-article-list-author-name">${author.name}</div>
+                  <div class="cj-article-list-author-title">${author.title}</div>
+                </div>
+              </div>
+              <div class="cj-article-list-headline">${a.headline}</div>
+              <div class="cj-article-list-excerpt">${a.excerpt}</div>
+              <div class="cj-article-list-meta">${relativeDate(a.date)} &bull; 👍 ${formatNumber(a.likes)}</div>
+            </div>
+            <div class="cj-article-list-thumb">📝</div>
+          </div>
+        `;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

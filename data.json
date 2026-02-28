@@ -1,0 +1,336 @@
+{
+  "characters": [
+    {
+      "id": "gary-winship",
+      "name": "Gary Winship",
+      "title": "Regional Sales Manager | Kettering & Surrounding Areas | Food Enthusiast",
+      "location": "Kettering, East Midlands",
+      "connections": 847,
+      "followers": 312,
+      "avatar": "GW",
+      "avatarColor": "#0a66c2",
+      "tagline": "Passionate about people, process, and a proper breakfast.",
+      "bio": "20+ years in regional sales. I've driven every B-road in the East Midlands and eaten in places that don't have a TripAdvisor page yet. That's not a complaint — that's a flex. If you want to talk pipeline, territory management, or where to get the best pork dripping sandwich in Northamptonshire, my inbox is always open.",
+      "featured": true
+    },
+    {
+      "id": "brad-hustle",
+      "name": "Brad Hustle",
+      "title": "Serial Entrepreneur | Founder @ VelocityMindset | Helping YOU unlock your potential 🚀",
+      "location": "London, England",
+      "connections": 14203,
+      "followers": 28441,
+      "avatar": "BH",
+      "avatarColor": "#057642",
+      "tagline": "3x founder. Infinite learner. DM me 'READY' to find out more.",
+      "bio": "I've failed forward three times and I'm not stopping. FailFast (2019-2020). GrindStack (2021-2022). DisruptLocal (2022-2023). Each one a masterclass in resilience. Now I channel everything into VelocityMindset — the programme that teaches you what school never did. Join 12 students who are already on the journey. The Hustle Blueprint: £197. Link in bio.",
+      "featured": true
+    },
+    {
+      "id": "derek-leanin",
+      "name": "Derek Leanin",
+      "title": "Motivational Strategist | Speaker | Helping Leaders Think Different",
+      "location": "Manchester, England",
+      "connections": 3201,
+      "followers": 8820,
+      "avatar": "DL",
+      "avatarColor": "#b24020",
+      "tagline": "Every setback is a setup. Every failure is a foundation.",
+      "bio": "I believe the world's greatest lessons come not from boardrooms or business schools, but from life itself. I share those lessons here. Some weeks I post every day. Some weeks, life teaches me something so profound I need to sit with it. Follow along. You won't regret it.",
+      "featured": true
+    },
+    {
+      "id": "caroline-stakeholder",
+      "name": "Caroline Stakeholder",
+      "title": "Connector | Amplifier | Human | Change Advocate",
+      "location": "Bristol, England",
+      "connections": 4209,
+      "followers": 1103,
+      "avatar": "CS",
+      "avatarColor": "#6940c2",
+      "tagline": "I see you. I hear you. I share your content.",
+      "bio": "Some people create. Some people connect. I do both, but mainly the second one. If you've posted something that moved me — and a lot of things move me — you'll know about it. This space is about amplification, community, and showing up. Every. Single. Day.",
+      "featured": false
+    },
+    {
+      "id": "nigel-founder",
+      "name": "Nigel Boateng-Walsh",
+      "title": "Property Investor | Entrepreneur | Founder @ NB-W Capital | Mindset Coach",
+      "location": "Guildford, Surrey",
+      "connections": 2108,
+      "followers": 4330,
+      "avatar": "NB",
+      "avatarColor": "#c27a03",
+      "tagline": "Building generational wealth one asset at a time. 🏠",
+      "bio": "I didn't come from money. I came from Croydon. Now I run a property portfolio across two counties and coach other founders on the mindset shift that changes everything. My events sell out. My properties rent out. My methods work. If you're ready to build something real — let's talk.",
+      "featured": true
+    },
+    {
+      "id": "priya-bandwidth",
+      "name": "Priya Bandwidth",
+      "title": "Thought Leader | Keynote Speaker | Founder @ The Bandwidth Brief Newsletter",
+      "location": "Leeds, England",
+      "connections": 9801,
+      "followers": 22100,
+      "avatar": "PB",
+      "avatarColor": "#d42069",
+      "tagline": "The future isn't coming. It's already here. Are you ready?",
+      "bio": "I speak at conferences. I write the newsletter. I am writing the book (2025, I mean it this time). I have been called a visionary by people who heard me speak. I travel for work a lot and document this on here because I think it's important for people to see that success looks like a departure lounge.",
+      "featured": true
+    }
+  ],
+  "posts": [
+    {
+      "id": "post-001",
+      "type": "post",
+      "author": "gary-winship",
+      "date": "2025-02-26",
+      "text": "People talk about Greggs like it's the pinnacle of the casual dining experience.\n\nI was in a layby outside Corby at 7:15 this morning. There's a van there — no sign, no social media presence, no Google listing. Run by a man called Trevor. Trevor does a pork dripping sandwich on white bread that would make your knees buckle.\n\nI'll be circlejerking this later because some of you need to know about Trevor.\n\nGreggs. Don't make me laugh.",
+      "image": null,
+      "likes": 94,
+      "comments": [
+        {
+          "author": "caroline-stakeholder",
+          "text": "This. 🙌 Couldn't have said it better myself. The hidden gems are always off the beaten track."
+        },
+        {
+          "author": "brad-hustle",
+          "text": "Love this Gary. The best opportunities are always where nobody else is looking. Same applies to business. 🚀"
+        }
+      ]
+    },
+    {
+      "id": "post-002",
+      "type": "post",
+      "author": "brad-hustle",
+      "date": "2025-02-26",
+      "text": "4:47am.\n\nDark outside.\n\nEveryone else is asleep.\n\nI am not everyone else.\n\nYear one of VelocityMindset, I had nothing. No funding. No team. No traction. Just a laptop, a dream, and an absolute refusal to accept the narrative society had written for me.\n\nYear two? I have 12 students. A Notion template. And a clearer vision than I have ever had.\n\nThe Hustle Blueprint isn't for everyone. It's for the ones who are awake at 4:47.\n\nAre you awake?\n\nDM me 'READY' to find out more. 🚀",
+      "image": null,
+      "likes": 341,
+      "comments": [
+        {
+          "author": "derek-leanin",
+          "text": "The ones who get up before the sun are the ones who build the future. Powerful stuff Brad."
+        },
+        {
+          "author": "caroline-stakeholder",
+          "text": "This. 🙌"
+        }
+      ]
+    },
+    {
+      "id": "post-003",
+      "type": "post",
+      "author": "derek-leanin",
+      "date": "2025-02-25",
+      "text": "I once watched a pigeon eat a discarded chip in a Lidl car park in Wolverhampton.\n\nIt didn't ask for permission.\n\nIt didn't wait for the chip to be offered.\n\nIt saw the chip. It assessed the chip. It took the chip.\n\nThat pigeon's name was Jeff Bezos.\n\nStop waiting to be handed the chip.\n\nTake the chip.\n\n♻️ Repost if this moved you.",
+      "image": null,
+      "likes": 2847,
+      "comments": [
+        {
+          "author": "caroline-stakeholder",
+          "text": "Couldn't have said it better. The chip is out there for all of us. We just have to want it enough. 🙌"
+        },
+        {
+          "author": "brad-hustle",
+          "text": "Sending this to my entire cohort RIGHT NOW. Derek you are the real deal mate."
+        },
+        {
+          "author": "gary-winship",
+          "text": "Good stuff Derek. Though I will say, Lidl car parks are underrated for a quick bite. The bakery section is decent first thing."
+        }
+      ]
+    },
+    {
+      "id": "post-004",
+      "type": "post",
+      "author": "nigel-founder",
+      "date": "2025-02-24",
+      "text": "I'm not going to lie to you.\n\nAdding a £1.2m property to the portfolio last quarter nearly broke me.\n\nThe due diligence. The negotiation. The sleepless nights questioning every decision. My body was telling me to stop. I kept going.\n\nBecause that's what builders do.\n\nThe asset is now generating £1,450 a month. The stress was temporary. The asset is permanent.\n\nThis is what I teach at my Founder Mornings events. The body will lie to you. The spreadsheet will not.\n\nNext event: 14th March, Guildford. Link in bio. 🏠",
+      "image": null,
+      "likes": 188,
+      "comments": [
+        {
+          "author": "brad-hustle",
+          "text": "Inspiration Nigel. The body is just the mind's most vocal critic. 🔥"
+        },
+        {
+          "author": "derek-leanin",
+          "text": "I once met a man who stopped at the bottom of Everest because his legs hurt. Nobody remembers his name."
+        }
+      ]
+    },
+    {
+      "id": "post-005",
+      "type": "post",
+      "author": "priya-bandwidth",
+      "date": "2025-02-24",
+      "text": "Landed.\n\nDubai.\n\nThird time this year.\n\nEvery time I come here I'm reminded that the future isn't a destination.\n\nIt's a posture.\n\nSpeaking tomorrow at the GrowthForward MENA Summit to 200+ founders, operators, and builders about what I'm calling The Bandwidth Shift.\n\nI won't spoil it here.\n\nBut if you've been following along, you already know.\n\nThe Bandwidth Brief — issue 34 — drops Thursday. 34 issues. Still going. ✈️\n\n#ThoughtLeadership #FutureOfWork #Dubai #Grateful",
+      "image": null,
+      "likes": 423,
+      "comments": [
+        {
+          "author": "caroline-stakeholder",
+          "text": "This. The future is absolutely a posture. Couldn't agree more Priya. Safe travels! 🙌"
+        },
+        {
+          "author": "derek-leanin",
+          "text": "The best views are always from departure gates and mountain tops. You're doing both Priya (metaphorically)."
+        }
+      ]
+    },
+    {
+      "id": "post-006",
+      "type": "post",
+      "author": "caroline-stakeholder",
+      "date": "2025-02-23",
+      "text": "Just seen this from Brad Hustle and I couldn't NOT share it.\n\nI mean — could I have said this better myself? Honestly, probably not. So I won't try.\n\nActually, I will just say: the people who show up before sunrise are the architects of their own future. The ones who sleep in are the tenants. That's not me being harsh. That's just mathematics.\n\nAnyway. Brad. This. 🙌\n\n[Resharing: Brad Hustle — 4:47am post]",
+      "image": null,
+      "likes": 67,
+      "comments": [
+        {
+          "author": "brad-hustle",
+          "text": "Caroline you are an absolute champion. This community 🙏"
+        }
+      ]
+    },
+    {
+      "id": "post-007",
+      "type": "post",
+      "author": "nigel-founder",
+      "date": "2025-02-22",
+      "text": "Before and after.\n\nThis one took 6 weeks. Bought at auction. Previous owner had let it go a bit.\n\nWe came in, stripped it back, fresh plaster, full repaint throughout (Dulux Polished Pebble — clients always ask), new carpets from Carpet Right, and a kitchen from B&Q that photographs absolutely beautifully.\n\nOn the market Friday. Already had three enquiries.\n\nThis is what I mean when I say ANYONE can do this. You just need the eye, the team, and the discipline to walk away from the shortcuts.\n\nAsk me about my next Founder Morning. 🏠✨",
+      "image": null,
+      "likes": 312,
+      "comments": [
+        {
+          "author": "caroline-stakeholder",
+          "text": "The transformation is incredible Nigel. You have such an eye for this. 🙌"
+        },
+        {
+          "author": "gary-winship",
+          "text": "Solid work Nigel. I drive past some of those auction places on my rounds. Good to know what to look for."
+        }
+      ]
+    },
+    {
+      "id": "post-008",
+      "type": "article",
+      "author": "gary-winship",
+      "date": "2025-02-20",
+      "headline": "What a petrol station outside Northampton taught me about leadership",
+      "excerpt": "It was a Tuesday. I was between calls. The satnav had taken me off the A43 onto a road I didn't recognise. What happened next changed how I think about everything.",
+      "headerImage": null,
+      "body": "It was a Tuesday. I was between calls — Daventry to Wellingborough, a route I could drive in my sleep. The satnav took me off the A43 onto a B-road I didn't recognise. Fine. I've driven worse.\n\nAbout four miles in, I spotted it. Forecourt. Two pumps. A small shop with a handwritten sign in the window: HOT FOOD. Not a chain. Not a brand. Just a sign and a possibility.\n\nI pulled in.\n\nThe woman behind the counter — Margaret, as it turned out — had been running this place for 31 years. Her father had run it before her. The sausage roll she sold me was warm, properly seasoned, and wrapped in a paper bag with no logo on it. Just a bag. Just a sausage roll.\n\nAnd I thought: this is leadership.\n\nNot the TED Talk version. Not the LinkedIn version. The real version. Showing up. Doing the thing. Not needing a brand or a following or a course to sell.\n\nMargaret doesn't have a newsletter. Margaret doesn't post at 4:47am. Margaret has been there for 31 years with a sign that says HOT FOOD, and that sign has never lied.\n\nI drove away thinking about all the Margarets out there. The ones doing the work without the noise.\n\nGreggs could never.",
+      "likes": 701,
+      "comments": [
+        {
+          "author": "derek-leanin",
+          "text": "Margaret is all of us. We are all Margaret. Until we become something more than Margaret. Powerful piece Gary."
+        },
+        {
+          "author": "caroline-stakeholder",
+          "text": "I cried a little bit at this. Couldn't have said it better. Sharing immediately. This. 🙌"
+        },
+        {
+          "author": "priya-bandwidth",
+          "text": "The Margarets are the ones who never needed a rebrand. There's a newsletter issue in this Gary."
+        }
+      ]
+    },
+    {
+      "id": "post-009",
+      "type": "article",
+      "author": "brad-hustle",
+      "date": "2025-02-15",
+      "headline": "I lost everything at 22. Here's what it taught me about winning.",
+      "excerpt": "FailFast was my first company. We had a deck, a domain name, and a dream. Then we had nothing. This is the story I've never fully told before (I've told it several times but not like this).",
+      "headerImage": null,
+      "body": "Let me take you back to 2019.\n\nI was 20 years old. I had a laptop, a WeWork day pass, and an idea that I genuinely believed was going to change the logistics sector. FailFast was born.\n\nWhat was FailFast? It was an app. An app that connected local couriers with small businesses using proprietary route optimisation. We had a deck. We had a domain. We had a Slack workspace with four people in it.\n\nWe did not have a product. We did not have customers. We did not have revenue. These felt like details.\n\nEighteen months later, FailFast was dead.\n\nBut here's what I gained:\n\n1. I learned that a deck is not a business.\n2. I learned that a Slack workspace is not a team.\n3. I learned that WeWork day passes are very expensive over eighteen months.\n\nAnd most importantly: I learned that failure is not the opposite of success. Failure is the curriculum.\n\nGrindStack came next (2021). Then DisruptLocal (2022). Each one a new lesson. Each one a new chapter in the book I am writing mentally every single day.\n\nNow there is VelocityMindset. And it is different. I can feel it.\n\nI have 12 students enrolled in The Hustle Blueprint. Twelve people who decided that the traditional path wasn't for them. Twelve people who are awake at 4:47am.\n\nAre you ready to be the thirteenth?\n\nDM me 'READY'.",
+      "likes": 1203,
+      "comments": [
+        {
+          "author": "derek-leanin",
+          "text": "Every empire was built on a foundation of ruins. Yours is coming Brad."
+        },
+        {
+          "author": "caroline-stakeholder",
+          "text": "The honesty here is incredible. Couldn't have been more vulnerable if you tried. This. This. This. 🙌"
+        }
+      ]
+    },
+    {
+      "id": "post-010",
+      "type": "post",
+      "author": "derek-leanin",
+      "date": "2025-02-19",
+      "text": "In 1987, a young boy in a small town in Ohio couldn't afford shoes for school.\n\nA teacher noticed. She didn't say anything. She just left a pair outside his locker the next morning.\n\nThat boy never forgot.\n\nThat boy grew up.\n\nThat boy is now responsible for the logistics operations of one of the largest fulfilment networks in the world, where conditions for workers are, by certain accounts, quite difficult.\n\nBut the shoes. The shoes mattered.\n\nBe the teacher.\n\n♻️ Repost if this resonated.",
+      "image": null,
+      "likes": 4102,
+      "comments": [
+        {
+          "author": "caroline-stakeholder",
+          "text": "Be the teacher. BE THE TEACHER. I am screenshotting this immediately. 🙌"
+        },
+        {
+          "author": "nigel-founder",
+          "text": "Powerful Derek. The details are what build the foundation. Speaking of foundations — event on 14th March if you're interested mate 👊"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-001",
+      "title": "Sales Executive (Driven & Hungry Individuals Only)",
+      "company": "Synergise Solutions Ltd",
+      "location": "Slough, Berkshire (Hybrid — min. 4 days in office)",
+      "salary": "£22,000–£24,000 DOE + uncapped commission*",
+      "type": "Full-time",
+      "posted": "2025-02-25",
+      "logo": "SS",
+      "logoColor": "#0a66c2",
+      "description": "An exciting opportunity has arisen for a driven sales professional to join our growing team at Synergise Solutions. You will be responsible for generating leads, managing a pipeline, and hitting targets in a fast-paced, dynamic environment.\n\nThe right candidate will be hungry, resilient, and not afraid to pick up the phone. We're not looking for clock-watchers.\n\nBenefits include: 28 days holiday (including bank holidays), pension (statutory), free parking (limited spaces, first come first served), casual Friday (smart casual), kitchen with Nespresso machine.",
+      "smallPrint": "*Uncapped commission subject to hitting base target. Base target reviewed quarterly. Commission structure under review."
+    },
+    {
+      "id": "job-002",
+      "title": "Digital Marketing Executive — Future Star Programme",
+      "company": "Leverage & Grow UK",
+      "location": "Birmingham, West Midlands (On-site)",
+      "salary": "£21,000",
+      "type": "Full-time",
+      "posted": "2025-02-24",
+      "logo": "LG",
+      "logoColor": "#057642",
+      "description": "Leverage & Grow is looking for a passionate and curious Digital Marketing Executive to join our award-winning* team. This is an entry-level role with genuine progression potential for the right person.\n\nYou will be supporting the marketing team with social media scheduling, email campaigns, reporting, and general marketing administration. You will also be expected to attend monthly all-hands meetings and contribute to our culture programme.\n\nThe ideal candidate will have: a degree (any discipline), 1-2 years' relevant experience (unpaid internships count), strong attention to detail, a passion for brands, and a can-do attitude.",
+      "smallPrint": "*Self-nominated award, 2023 West Midlands Business Excellence shortlist."
+    },
+    {
+      "id": "job-003",
+      "title": "Customer Success Manager",
+      "company": "PivotCore Technologies",
+      "location": "Remote (UK only — must be able to attend London office quarterly)",
+      "salary": "Competitive",
+      "type": "Full-time",
+      "posted": "2025-02-22",
+      "logo": "PC",
+      "logoColor": "#b24020",
+      "description": "PivotCore Technologies is scaling rapidly and we need a Customer Success Manager to help us retain and grow our client base. You'll be the primary point of contact for a portfolio of 80–120 accounts, responsible for onboarding, QBRs, renewals, and upsell conversations.\n\nThis is a high-impact role with visibility at senior leadership level. We're a fast-moving team and we expect our CSMs to move fast with us. There's no playbook — you'll be writing it.\n\nWe offer: flexible working (core hours 9–6), 25 days holiday, private health (after 2 years), and a genuine seat at the table.",
+      "smallPrint": "Salary: competitive. We don't post a range because every candidate is different. Please include your current salary in your application."
+    },
+    {
+      "id": "job-004",
+      "title": "EXCITING OPPORTUNITY — Brand Ambassador (Commission Only)",
+      "company": "Apex Wellness Partners",
+      "location": "Nationwide (Work from home!)",
+      "salary": "Uncapped earnings — you set the ceiling! 💰",
+      "type": "Self-employed / Flexible",
+      "posted": "2025-02-21",
+      "logo": "AW",
+      "logoColor": "#c27a03",
+      "description": "Are you passionate about health, wellness, and building a community around things that matter? Do you want to be your own boss and work the hours that suit YOUR lifestyle?\n\nApex Wellness Partners is looking for motivated Brand Ambassadors to share our range of premium wellness products with their existing network. No experience necessary — just enthusiasm and a strong social media presence.\n\nThis is NOT a job. This is a business opportunity. You are the CEO of your own journey.\n\nInitial starter kit required (£149 + VAT). Earnings from referrals and downline activity.",
+      "smallPrint": "Average annual earnings of active Brand Ambassadors: £612. 73% of participants earn less than the cost of the starter kit."
+    }
+  ]
+}

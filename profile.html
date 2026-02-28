@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circlejerk — Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="cj-page">
+    <div class="cj-layout-wide" style="display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;max-width:900px;margin:0 auto;">
+
+      <main>
+        <!-- Profile Header Card -->
+        <div class="cj-card cj-gap" id="profile-header">
+          <div style="padding:32px;text-align:center;color:#999">Loading...</div>
+        </div>
+
+        <!-- About -->
+        <div class="cj-card cj-gap" id="profile-about" style="display:none;">
+          <div style="padding:16px 24px;">
+            <div class="cj-section-title">About</div>
+            <div id="about-body" style="font-size:14px;line-height:1.6;white-space:pre-line;color:#333;"></div>
+          </div>
+        </div>
+
+        <!-- Posts by this person -->
+        <div>
+          <div style="font-size:18px;font-weight:700;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--cj-border);">Activity</div>
+          <div id="profile-posts">
+            <div style="padding:16px;text-align:center;color:#999">Loading posts...</div>
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="cj-card" style="padding:16px;">
+          <div style="font-size:15px;font-weight:700;margin-bottom:12px;">Profile details</div>
+          <div id="profile-stats" style="font-size:13px;color:#666;line-height:2;"></div>
+        </div>
+        <div style="height:8px;"></div>
+        <div id="pymk-sidebar"></div>
+      </aside>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="cj.js"></script>
+  <script>
+    (async () => {
+      await loadData();
+      document.getElementById('nav-placeholder').innerHTML = renderNav('profiles.html');
+      document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+      const id = getQueryParam('id');
+      const char = getCharacter(id);
+
+      if (!char) {
+        document.getElementById('profile-header').innerHTML = '<div style="padding:32px;text-align:center;">Profile not found.</div>';
+        return;
+      }
+
+      document.title = `Circlejerk — ${char.name}`;
+
+      document.getElementById('profile-header').innerHTML = `
+        <div class="cj-profile-banner"></div>
+        <div class="cj-profile-header">
+          <div class="cj-profile-avatar-wrap">
+            ${avatarHTML(char, 'xl')}
+          </div>
+          <div class="cj-profile-name">${char.name}</div>
+          <div class="cj-profile-title">${char.title}</div>
+          <div class="cj-profile-location">📍 ${char.location}</div>
+          <div class="cj-profile-connections">${formatNumber(char.connections)} connections &bull; ${formatNumber(char.followers)} followers</div>
+          <div class="cj-profile-actions">
+            <button class="cj-btn cj-btn-primary">+ Follow</button>
+            <button class="cj-btn cj-btn-outline">Connect</button>
+            <button class="cj-btn cj-btn-outline">Message</button>
+          </div>
+        </div>
+      `;
+
+      const aboutCard = document.getElementById('profile-about');
+      aboutCard.style.display = '';
+      document.getElementById('about-body').textContent = char.bio;
+
+      document.getElementById('profile-stats').innerHTML = `
+        <div>🔗 <strong>${formatNumber(char.connections)}</strong> connections</div>
+        <div>👥 <strong>${formatNumber(char.followers)}</strong> followers</div>
+        <div>📍 ${char.location}</div>
+      `;
+
+      document.getElementById('pymk-sidebar').innerHTML = renderPYMK(char.id);
+
+      const posts = CJ_DATA.posts.filter(p => p.author === id);
+      const container = document.getElementById('profile-posts');
+      if (posts.length === 0) {
+        container.innerHTML = '<div class="cj-card" style="padding:24px;text-align:center;color:#999;">No posts yet.</div>';
+      } else {
+        container.innerHTML = posts.map(renderPost).join('');
+      }
+    })();
+  </script>
+</body>
+</html>

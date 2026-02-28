@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circlejerk — Jobs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="cj-page">
+    <div class="cj-layout-wide" style="display:grid;grid-template-columns:225px 1fr;gap:24px;">
+
+      <aside>
+        <div id="sidebar-profile"></div>
+        <div style="height:8px;"></div>
+        <div class="cj-card" style="padding:12px 16px;font-size:13px;">
+          <div style="font-weight:700;margin-bottom:10px;">Filter by type</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+              <input type="checkbox" checked> Full-time
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+              <input type="checkbox" checked> Self-employed
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+              <input type="checkbox"> Commission only
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <div class="cj-page-header">Jobs — Find your next exciting opportunity</div>
+        <div class="cj-card" id="jobs-container">
+          <div style="padding:32px;text-align:center;color:#999">Loading...</div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="cj.js"></script>
+  <script>
+    (async () => {
+      await loadData();
+      document.getElementById('nav-placeholder').innerHTML = renderNav('jobs.html');
+      document.getElementById('sidebar-profile').innerHTML = renderSidebarProfile();
+      document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+      const container = document.getElementById('jobs-container');
+
+      container.innerHTML = CJ_DATA.jobs.map((job, i) => {
+        const isLast = i === CJ_DATA.jobs.length - 1;
+        const badgeClass = job.type === 'Self-employed / Flexible' ? 'cj-badge-self' : 'cj-badge-full';
+        const badgeLabel = job.type === 'Self-employed / Flexible' ? '🤝 Self-employed' : '💼 Full-time';
+
+        return `
+          <div class="cj-job-card">
+            <div class="cj-job-header">
+              <div class="cj-job-logo" style="background:${job.logoColor}">${job.logo}</div>
+              <div class="cj-job-info">
+                <div class="cj-job-title">${job.title}</div>
+                <div class="cj-job-company">${job.company}</div>
+                <div class="cj-job-location">📍 ${job.location}</div>
+              </div>
+            </div>
+            <div class="cj-job-salary">💰 ${job.salary}</div>
+            <span class="cj-job-badge ${badgeClass}">${badgeLabel}</span>
+            <div class="cj-job-description">${job.description}</div>
+            ${job.smallPrint ? `<div class="cj-job-small-print">${job.smallPrint}</div>` : ''}
+            <div style="display:flex;gap:8px;margin-top:12px;">
+              <button class="cj-btn cj-btn-primary" style="font-size:13px;padding:6px 16px;">Apply now</button>
+              <button class="cj-btn cj-btn-outline" style="font-size:13px;padding:6px 16px;">Save</button>
+            </div>
+            <div style="font-size:11px;color:#999;margin-top:8px;">Posted ${relativeDate(job.posted)}</div>
+          </div>
+          ${!isLast ? '<hr class="cj-job-divider">' : ''}
+        `;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

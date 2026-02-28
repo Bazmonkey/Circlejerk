@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circlejerk — Welcome to your self-congratulatory community</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cj-hero-mock {
+      background: white;
+      border-radius: var(--cj-radius);
+      border: 1px solid var(--cj-border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+    .cj-hero-mock-bar {
+      background: #0a66c2;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cj-hero-mock-bar span {
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+      height: 6px;
+      flex: 1;
+      max-width: 120px;
+    }
+    .cj-hero-mock-post {
+      padding: 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .cj-hero-mock-post-head {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      align-items: center;
+    }
+    .cj-mock-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #0a66c2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+    .cj-mock-lines {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .cj-mock-line {
+      height: 6px;
+      background: #e8e8e8;
+      border-radius: 3px;
+    }
+    .cj-mock-text-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    .cj-mock-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .cj-mock-btn {
+      height: 20px;
+      background: #f0f0f0;
+      border-radius: 3px;
+      flex: 1;
+    }
+    .cj-landing-features {
+      background: white;
+      padding: 48px 24px;
+      border-top: 1px solid var(--cj-border);
+    }
+    .cj-features-inner {
+      max-width: var(--cj-max-width);
+      margin: 0 auto;
+    }
+    .cj-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .cj-feature-block { text-align: center; }
+    .cj-feature-icon { font-size: 40px; margin-bottom: 12px; }
+    .cj-feature-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .cj-feature-desc { font-size: 14px; color: #666; line-height: 1.5; }
+    @media (max-width: 768px) {
+      .cj-features-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="cj-nav">
+  <div class="cj-nav-inner">
+    <a href="index.html" class="cj-logo">
+      <div class="cj-logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+        </svg>
+      </div>
+      <span class="cj-logo-text">circlejerk</span>
+    </a>
+    <ul class="cj-nav-links" style="margin-left:auto;">
+      <li><a href="feed.html"><span class="nav-icon">🏠</span><span class="nav-label">Home</span></a></li>
+      <li><a href="profiles.html"><span class="nav-icon">👥</span><span class="nav-label">Network</span></a></li>
+      <li><a href="jobs.html"><span class="nav-icon">💼</span><span class="nav-label">Jobs</span></a></li>
+      <li><a href="articles.html"><span class="nav-icon">📝</span><span class="nav-label">Articles</span></a></li>
+      <li><a href="#" class="cj-nav-cta">Sign in</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="cj-hero">
+  <div class="cj-hero-inner">
+    <div>
+      <h1 class="cj-hero-tagline">Welcome to your self-congratulatory community</h1>
+      <p class="cj-hero-sub">On Circlejerk, you can connect with other self-important professionals, share hollow platitudes, and celebrate your accomplishments.</p>
+      <div class="cj-hero-ctas">
+        <a href="feed.html" class="cj-btn-hero-primary">Join now</a>
+        <div class="cj-hero-divider">or</div>
+        <a href="feed.html" class="cj-btn-hero-secondary">View the feed</a>
+      </div>
+    </div>
+    <div>
+      <div class="cj-hero-mock">
+        <div class="cj-hero-mock-bar">
+          <div style="font-size:12px;color:white;font-weight:700">circlejerk</div>
+          <span></span><span></span><span style="max-width:60px"></span>
+        </div>
+        <div class="cj-hero-mock-post">
+          <div class="cj-hero-mock-post-head">
+            <div class="cj-mock-avatar">BH</div>
+            <div class="cj-mock-lines">
+              <div class="cj-mock-line" style="width:80%"></div>
+              <div class="cj-mock-line" style="width:60%"></div>
+            </div>
+          </div>
+          <div class="cj-mock-text-lines">
+            <div class="cj-mock-line" style="width:100%"></div>
+            <div class="cj-mock-line" style="width:100%"></div>
+            <div class="cj-mock-line" style="width:75%"></div>
+          </div>
+          <div class="cj-mock-actions">
+            <div class="cj-mock-btn"></div>
+            <div class="cj-mock-btn"></div>
+            <div class="cj-mock-btn"></div>
+          </div>
+        </div>
+        <div class="cj-hero-mock-post">
+          <div class="cj-hero-mock-post-head">
+            <div class="cj-mock-avatar" style="background:#b24020">DL</div>
+            <div class="cj-mock-lines">
+              <div class="cj-mock-line" style="width:70%"></div>
+              <div class="cj-mock-line" style="width:50%"></div>
+            </div>
+          </div>
+          <div class="cj-mock-text-lines">
+            <div class="cj-mock-line" style="width:100%"></div>
+            <div class="cj-mock-line" style="width:90%"></div>
+            <div class="cj-mock-line" style="width:55%"></div>
+          </div>
+          <div class="cj-mock-actions">
+            <div class="cj-mock-btn"></div>
+            <div class="cj-mock-btn"></div>
+            <div class="cj-mock-btn"></div>
+          </div>
+        </div>
+        <div style="padding:10px 12px;font-size:11px;color:#888;text-align:center;">circlejerkedit.com</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cj-landing-features">
+  <div class="cj-features-inner">
+    <h2 style="font-size:28px;font-weight:700;text-align:center;">Everything you need to feel important</h2>
+    <div class="cj-features-grid">
+      <div class="cj-feature-block">
+        <div class="cj-feature-icon">🤝</div>
+        <div class="cj-feature-title">Connect with professionals</div>
+        <div class="cj-feature-desc">Find people you know and expand your network. Or find people you've never met and connect with them anyway.</div>
+      </div>
+      <div class="cj-feature-block">
+        <div class="cj-feature-icon">💬</div>
+        <div class="cj-feature-title">Share your insights</div>
+        <div class="cj-feature-desc">Post and repost trite sayings. Write articles. Share things you've already said, but worse.</div>
+      </div>
+      <div class="cj-feature-block">
+        <div class="cj-feature-icon">💼</div>
+        <div class="cj-feature-title">Celebrate your success</div>
+        <div class="cj-feature-desc">Discover new jobs with diminishing benefits and bask in the validation of people who don't know you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="cj-footer">
+  <div class="cj-footer-inner">
+    <span>circlejerk &copy; 2025 &mdash; circlejerkedit.com</span>
+    <ul class="cj-footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="jobs.html">Jobs Board</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

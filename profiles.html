@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circlejerk — Network</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cj-profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .cj-profile-card {
+      background: white;
+      border: 1px solid var(--cj-border);
+      border-radius: var(--cj-radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      text-align: center;
+    }
+    .cj-profile-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .cj-profile-card-banner {
+      height: 48px;
+      background: linear-gradient(135deg, var(--cj-blue) 0%, #004182 100%);
+    }
+    .cj-profile-card-body {
+      padding: 0 16px 16px;
+    }
+    .cj-profile-card-avatar {
+      margin-top: -22px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: center;
+    }
+    .cj-profile-card-avatar .cj-avatar {
+      border: 2px solid white;
+    }
+    .cj-profile-card-name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+    .cj-profile-card-title {
+      font-size: 11px;
+      color: var(--cj-text-secondary);
+      line-height: 1.3;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .cj-profile-card-connections {
+      font-size: 11px;
+      color: var(--cj-text-secondary);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="cj-page">
+    <div class="cj-layout-wide" style="display:grid;grid-template-columns:225px 1fr;gap:24px;">
+
+      <aside>
+        <div id="sidebar-profile"></div>
+      </aside>
+
+      <main>
+        <div class="cj-page-header">People you may know</div>
+        <div class="cj-profiles-grid" id="profiles-grid">
+          <div style="color:#999">Loading...</div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="cj.js"></script>
+  <script>
+    (async () => {
+      await loadData();
+      document.getElementById('nav-placeholder').innerHTML = renderNav('profiles.html');
+      document.getElementById('sidebar-profile').innerHTML = renderSidebarProfile();
+      document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+      const grid = document.getElementById('profiles-grid');
+      grid.innerHTML = CJ_DATA.characters.map(c => `
+        <div class="cj-profile-card" onclick="location.href='profile.html?id=${c.id}'">
+          <div class="cj-profile-card-banner"></div>
+          <div class="cj-profile-card-body">
+            <div class="cj-profile-card-avatar">
+              ${avatarHTML(c, 'lg')}
+            </div>
+            <div class="cj-profile-card-name">${c.name}</div>
+            <div class="cj-profile-card-title">${c.title}</div>
+            <div class="cj-profile-card-connections">${formatNumber(c.followers)} followers</div>
+            <button class="cj-connect-btn" style="width:100%">+ Follow</button>
+          </div>
+        </div>
+      `).join('');
+    })();
+  </script>
+</body>
+</html>

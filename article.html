@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circlejerk — Article</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cj-article-full {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cj-article-full-header {
+      padding: 32px 32px 16px;
+    }
+    .cj-article-full-headline {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .cj-article-full-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .cj-article-author-info-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .cj-article-author-info-name a { color: var(--cj-text); }
+    .cj-article-author-info-meta {
+      font-size: 12px;
+      color: var(--cj-text-secondary);
+    }
+    .cj-article-full-body {
+      padding: 0 32px 24px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      white-space: pre-line;
+    }
+    .cj-article-full-body p { margin-bottom: 16px; }
+    .cj-article-reactions {
+      padding: 12px 32px;
+      border-top: 1px solid var(--cj-border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--cj-text-secondary);
+    }
+    @media (max-width: 600px) {
+      .cj-article-full-header { padding: 20px 16px 12px; }
+      .cj-article-full-headline { font-size: 22px; }
+      .cj-article-full-body { padding: 0 16px 20px; font-size: 15px; }
+      .cj-article-reactions { padding: 12px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+
+  <div class="cj-page">
+    <div class="cj-article-full">
+      <div class="cj-card cj-gap" id="article-container">
+        <div style="padding:32px;text-align:center;color:#999">Loading...</div>
+      </div>
+      <div id="article-comments"></div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="cj.js"></script>
+  <script>
+    (async () => {
+      await loadData();
+      document.getElementById('nav-placeholder').innerHTML = renderNav('articles.html');
+      document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+      const id = getQueryParam('id');
+      const article = CJ_DATA.posts.find(p => p.id === id && p.type === 'article');
+
+      if (!article) {
+        document.getElementById('article-container').innerHTML = '<div style="padding:32px;text-align:center;">Article not found.</div>';
+        return;
+      }
+
+      const author = getCharacter(article.author);
+      document.title = `Circlejerk — ${article.headline}`;
+
+      document.getElementById('article-container').innerHTML = `
+        <div class="cj-article-full-header">
+          <div class="cj-article-full-headline">${article.headline}</div>
+          <div class="cj-article-full-author">
+            <a href="profile.html?id=${author.id}">${avatarHTML(author, 'lg')}</a>
+            <div>
+              <div class="cj-article-author-info-name"><a href="profile.html?id=${author.id}">${author.name}</a></div>
+              <div class="cj-article-author-info-meta">${author.title}</div>
+              <div class="cj-article-author-info-meta">${relativeDate(article.date)}</div>
+            </div>
+          </div>
+        </div>
+        ${article.headerImage ? `<img src="${article.headerImage}" class="cj-post-image" alt="">` : '<div style="height:180px;background:linear-gradient(135deg,#e8f0fb,#dce6f1);display:flex;align-items:center;justify-content:center;font-size:48px;">📝</div>'}
+        <div class="cj-article-full-body">${escapeHtml(article.body)}</div>
+        <div class="cj-article-reactions">
+          <span>👍❤️😂</span>&nbsp;${formatNumber(article.likes)} &bull; ${article.comments ? article.comments.length : 0} comments
+        </div>
+        <div class="cj-post-actions" style="padding:2px 16px;">
+          <button class="cj-action-btn"><span class="cj-action-icon">👍</span><span>Like</span></button>
+          <button class="cj-action-btn"><span class="cj-action-icon">💬</span><span>Comment</span></button>
+          <button class="cj-action-btn"><span class="cj-action-icon">🔁</span><span>Repost</span></button>
+          <button class="cj-action-btn"><span class="cj-action-icon">📤</span><span>Send</span></button>
+        </div>
+      `;
+
+      if (article.comments && article.comments.length > 0) {
+        const commentsHTML = article.comments.map(c => {
+          const commenter = getCharacter(c.author);
+          if (!commenter) return '';
+          return `<div class="cj-comment">
+            ${avatarHTML(commenter, 'sm')}
+            <div class="cj-comment-bubble">
+              <div class="cj-comment-author"><a href="profile.html?id=${commenter.id}">${commenter.name}</a></div>
+              <div class="cj-comment-text">${escapeHtml(c.text)}</div>
+            </div>
+          </div>`;
+        }).join('');
+
+        document.getElementById('article-comments').innerHTML = `
+          <div class="cj-card">
+            <div style="padding:16px 16px 0;font-size:15px;font-weight:700;">${article.comments.length} comment${article.comments.length !== 1 ? 's' : ''}</div>
+            <div class="cj-comments">${commentsHTML}</div>
+          </div>`;
+      }
+    })();
+  </script>
+</body>
+</html>
